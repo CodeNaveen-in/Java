@@ -1,0 +1,318 @@
+<svg viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="1600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#2c3e50">
+    ASSERTIONS IN PROGRAMMING - Complete Guide
+  </text>
+  
+  <!-- Section 1: What are Assertions? -->
+  <rect x="50" y="70" width="1100" height="120" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="10"/>
+  <text x="70" y="100" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1976d2">
+    What are Assertions?
+  </text>
+  <text x="70" y="125" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    • Statements that check if certain conditions are true during code execution
+  </text>
+  <text x="70" y="145" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    • Used to validate assumptions and constraints in your code (e.g., x must be positive)
+  </text>
+  <text x="70" y="165" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    • Help catch bugs during development and testing phases
+  </text>
+  
+  <!-- Section 2: Problem with Regular Exception Checking -->
+  <rect x="50" y="210" width="1100" height="140" fill="#ffebee" stroke="#d32f2f" stroke-width="2" rx="10"/>
+  <text x="70" y="240" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#d32f2f">
+    Problem with Regular Exception Checking
+  </text>
+  <rect x="90" y="255" width="480" height="80" fill="#fff" stroke="#ccc" stroke-width="1" rx="5"/>
+  <text x="100" y="275" font-family="Monaco, monospace" font-size="12" fill="#333">
+    if (x &lt; 0) {
+  </text>
+  <text x="100" y="295" font-family="Monaco, monospace" font-size="12" fill="#333">
+      throw new IllegalArgumentException("x &lt; 0");
+  </text>
+  <text x="100" y="315" font-family="Monaco, monospace" font-size="12" fill="#333">
+    }
+  </text>
+  
+  <text x="600" y="275" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    ❌ Always executes (performance hit)
+  </text>
+  <text x="600" y="295" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    ❌ Hard to remove after debugging
+  </text>
+  <text x="600" y="315" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    ❌ Remains in production code
+  </text>
+  
+  <!-- Section 3: Assertion Solution -->
+  <rect x="50" y="370" width="1100" height="140" fill="#e8f5e8" stroke="#4caf50" stroke-width="2" rx="10"/>
+  <text x="70" y="400" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#4caf50">
+    Assertion Solution
+  </text>
+  <rect x="90" y="415" width="480" height="80" fill="#fff" stroke="#ccc" stroke-width="1" rx="5"/>
+  <text x="100" y="435" font-family="Monaco, monospace" font-size="12" fill="#333">
+    assert x &gt;= 0;
+  </text>
+  <text x="100" y="455" font-family="Monaco, monospace" font-size="12" fill="#333">
+    // or with message:
+  </text>
+  <text x="100" y="475" font-family="Monaco, monospace" font-size="12" fill="#333">
+    assert x &gt;= 0 : "x is negative: " + x;
+  </text>
+  
+  <text x="600" y="435" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    ✅ Can be turned ON/OFF at runtime
+  </text>
+  <text x="600" y="455" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    ✅ Zero performance cost when disabled
+  </text>
+  <text x="600" y="475" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    ✅ Perfect for development/testing
+  </text>
+  
+  <!-- Section 4: How Assertions Work -->
+  <rect x="50" y="530" width="1100" height="180" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="10"/>
+  <text x="70" y="560" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ff9800">
+    How Assertions Work
+  </text>
+  
+  <!-- Flow diagram -->
+  <rect x="100" y="580" width="200" height="40" fill="#bbdefb" stroke="#1976d2" stroke-width="1" rx="5"/>
+  <text x="200" y="605" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333">
+    assert condition;
+  </text>
+  
+  <!-- Arrow -->
+  <path d="M 320 600 L 360 600" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Decision diamond -->
+  <polygon points="380,580 420,600 380,620 340,600" fill="#fff9c4" stroke="#f57f17" stroke-width="1"/>
+  <text x="380" y="605" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#333">
+    True?
+  </text>
+  
+  <!-- True path -->
+  <path d="M 420 600 L 460 600" stroke="#4caf50" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="440" y="590" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4caf50">
+    Yes
+  </text>
+  <rect x="480" y="580" width="120" height="40" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" rx="5"/>
+  <text x="540" y="605" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#333">
+    Continue
+  </text>
+  
+  <!-- False path -->
+  <path d="M 380 620 L 380 660" stroke="#f44336" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="370" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f44336">
+    No
+  </text>
+  <rect x="320" y="670" width="120" height="40" fill="#ffcdd2" stroke="#f44336" stroke-width="1" rx="5"/>
+  <text x="380" y="690" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#333">
+    AssertionError
+  </text>
+  <text x="380" y="702" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#666">
+    (Program crashes)
+  </text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  
+  <!-- Section 5: Assertions vs Exceptions -->
+  <rect x="50" y="730" width="1100" height="160" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" rx="10"/>
+  <text x="70" y="760" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#9c27b0">
+    Assertions vs Exceptions - Key Differences
+  </text>
+  
+  <!-- Comparison table -->
+  <rect x="90" y="780" width="500" height="25" fill="#9c27b0" stroke="#9c27b0"/>
+  <text x="200" y="798" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    ASSERTIONS
+  </text>
+  <text x="450" y="798" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    EXCEPTIONS
+  </text>
+  
+  <rect x="90" y="805" width="500" height="20" fill="#e1bee7" stroke="#9c27b0"/>
+  <text x="95" y="818" font-family="Arial, sans-serif" font-size="11" fill="#333">
+    • Internal debugging tool
+  </text>
+  <text x="345" y="818" font-family="Arial, sans-serif" font-size="11" fill="#333">
+    • Public API error handling
+  </text>
+  
+  <rect x="90" y="825" width="500" height="20" fill="#f3e5f5" stroke="#9c27b0"/>
+  <text x="95" y="838" font-family="Arial, sans-serif" font-size="11" fill="#333">
+    • Should NOT be caught
+  </text>
+  <text x="345" y="838" font-family="Arial, sans-serif" font-size="11" fill="#333">
+    • Designed to be caught &amp; handled
+  </text>
+  
+  <rect x="90" y="845" width="500" height="20" fill="#e1bee7" stroke="#9c27b0"/>
+  <text x="95" y="858" font-family="Arial, sans-serif" font-size="11" fill="#333">
+    • Can be disabled at runtime
+  </text>
+  <text x="345" y="858" font-family="Arial, sans-serif" font-size="11" fill="#333">
+    • Always active
+  </text>
+  
+  <rect x="90" y="865" width="500" height="20" fill="#f3e5f5" stroke="#9c27b0"/>
+  <text x="95" y="878" font-family="Arial, sans-serif" font-size="11" fill="#333">
+    • Fatal error - program should crash
+  </text>
+  <text x="345" y="878" font-family="Arial, sans-serif" font-size="11" fill="#333">
+    • Recoverable - program continues
+  </text>
+  
+  <!-- Section 6: Controlling Assertions -->
+  <rect x="50" y="910" width="1100" height="220" fill="#f1f8e9" stroke="#689f38" stroke-width="2" rx="10"/>
+  <text x="70" y="940" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#689f38">
+    Controlling Assertions at Runtime
+  </text>
+  
+  <!-- Enable assertions -->
+  <rect x="90" y="960" width="500" height="80" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" rx="5"/>
+  <text x="100" y="980" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2e7d32">
+    Enable Assertions
+  </text>
+  <text x="100" y="1000" font-family="Monaco, monospace" font-size="12" fill="#333">
+    java -enableassertions MyProgram    // All assertions
+  </text>
+  <text x="100" y="1020" font-family="Monaco, monospace" font-size="12" fill="#333">
+    java -ea MyProgram                  // Short form
+  </text>
+  
+  <!-- Selective enabling -->
+  <rect x="610" y="960" width="500" height="80" fill="#e8f5e8" stroke="#4caf50" stroke-width="1" rx="5"/>
+  <text x="620" y="980" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2e7d32">
+    Selective Control
+  </text>
+  <text x="620" y="1000" font-family="Monaco, monospace" font-size="12" fill="#333">
+    java -ea:MyClass MyProgram          // Specific class
+  </text>
+  <text x="620" y="1020" font-family="Monaco, monospace" font-size="12" fill="#333">
+    java -ea:com.myapp... MyProgram     // Entire package
+  </text>
+  
+  <!-- Disable assertions -->
+  <rect x="90" y="1050" width="500" height="70" fill="#ffcdd2" stroke="#f44336" stroke-width="1" rx="5"/>
+  <text x="100" y="1070" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c62828">
+    Disable Assertions
+  </text>
+  <text x="100" y="1090" font-family="Monaco, monospace" font-size="12" fill="#333">
+    java -disableassertions MyProgram   // Default behavior
+  </text>
+  <text x="100" y="1110" font-family="Monaco, monospace" font-size="12" fill="#333">
+    java -da:MyClass MyProgram          // Disable for class
+  </text>
+  
+  <!-- System assertions -->
+  <rect x="610" y="1050" width="500" height="70" fill="#fff3e0" stroke="#ff9800" stroke-width="1" rx="5"/>
+  <text x="620" y="1070" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f57c00">
+    System Assertions (Built-in Java classes)
+  </text>
+  <text x="620" y="1090" font-family="Monaco, monospace" font-size="12" fill="#333">
+    java -enablesystemassertions MyProgram
+  </text>
+  <text x="620" y="1110" font-family="Monaco, monospace" font-size="12" fill="#333">
+    java -esa MyProgram                 // Short form
+  </text>
+  
+  <!-- Section 7: Best Practices -->
+  <rect x="50" y="1150" width="1100" height="140" fill="#e0f2f1" stroke="#00796b" stroke-width="2" rx="10"/>
+  <text x="70" y="1180" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#00796b">
+    Best Practices &amp; When to Use
+  </text>
+  
+  <!-- Swimming analogy -->
+  <circle cx="150" cy="1220" r="30" fill="#81c784" stroke="#4caf50" stroke-width="2"/>
+  <text x="150" y="1210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">
+    🏊‍♂️
+  </text>
+  <text x="150" y="1225" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">
+    Training
+  </text>
+  <text x="150" y="1235" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#fff">
+    (Life jacket)
+  </text>
+  
+  <path d="M 190 1220 L 230 1220" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <circle cx="270" cy="1220" r="30" fill="#42a5f5" stroke="#1976d2" stroke-width="2"/>
+  <text x="270" y="1210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#fff">
+    🏊‍♂️
+  </text>
+  <text x="270" y="1225" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#fff">
+    Competition
+  </text>
+  <text x="270" y="1235" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#fff">
+    (No jacket)
+  </text>
+  
+  <text x="350" y="1200" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    ✅ Use assertions during development &amp; testing
+  </text>
+  <text x="350" y="1220" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    ✅ Disable in production for better performance
+  </text>
+  <text x="350" y="1240" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    ✅ Perfect for internal validation &amp; debugging
+  </text>
+  <text x="350" y="1260" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    ❌ Don't use for public API validation (use exceptions)
+  </text>
+  
+  <!-- Section 8: Example Code -->
+  <rect x="50" y="1310" width="1100" height="120" fill="#fafafa" stroke="#757575" stroke-width="2" rx="10"/>
+  <text x="70" y="1340" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#424242">
+    Complete Example
+  </text>
+  
+  <rect x="90" y="1355" width="520" height="60" fill="#f5f5f5" stroke="#bdbdbd" stroke-width="1" rx="5"/>
+  <text x="100" y="1375" font-family="Monaco, monospace" font-size="12" fill="#333">
+    public static double sqrt(double x) {
+  </text>
+  <text x="100" y="1390" font-family="Monaco, monospace" font-size="12" fill="#333">
+        assert x &gt;= 0 : "Cannot calculate sqrt of negative: " + x;
+  </text>
+  <text x="100" y="1405" font-family="Monaco, monospace" font-size="12" fill="#333">
+        return Math.sqrt(x);
+  </text>
+  
+  <rect x="630" y="1355" width="470" height="60" fill="#e8f5e8" stroke="#4caf50" stroke-width="1" rx="5"/>
+  <text x="640" y="1375" font-family="Monaco, monospace" font-size="12" fill="#333">
+    // Run with: java -ea MyProgram
+  </text>
+  <text x="640" y="1390" font-family="Monaco, monospace" font-size="12" fill="#333">
+    // If x is negative, program crashes with
+  </text>
+  <text x="640" y="1405" font-family="Monaco, monospace" font-size="12" fill="#333">
+    // AssertionError and diagnostic message
+  </text>
+  
+  <!-- Summary Box -->
+  <rect x="50" y="1450" width="1100" height="120" fill="#e3f2fd" stroke="#1976d2" stroke-width="3" rx="10"/>
+  <text x="600" y="1480" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1976d2">
+    SUMMARY
+  </text>
+  <text x="70" y="1505" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    🔹 Assertions are development tools for catching bugs early by validating assumptions
+  </text>
+  <text x="70" y="1525" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    🔹 They can be turned ON during testing and OFF in production for zero performance cost
+  </text>
+  <text x="70" y="1545" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    🔹 When assertion fails, program crashes with AssertionError - don't catch it, fix the bug!
+  </text>
+  <text x="70" y="1565" font-family="Arial, sans-serif" font-size="14" fill="#333">
+    🔹 Use exceptions for public APIs, assertions for internal debugging and validation
+  </text>
+</svg>

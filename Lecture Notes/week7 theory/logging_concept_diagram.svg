@@ -1,0 +1,281 @@
+<svg viewBox="0 0 1200 1600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="1600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#2c3e50">
+    Java Logging System Concepts
+  </text>
+  
+  <!-- Section 1: Problem with Print Statements -->
+  <rect x="50" y="70" width="1100" height="180" fill="#fff2cc" stroke="#d6b656" stroke-width="2" rx="10"/>
+  <text x="70" y="100" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#8b4513">
+    Problems with Print Statements
+  </text>
+  
+  <!-- Print statement issues -->
+  <rect x="80" y="120" width="300" height="80" fill="#ffe6e6" stroke="#ff9999" stroke-width="1" rx="5"/>
+  <text x="90" y="140" font-family="Arial, sans-serif" font-size="12" fill="#d32f2f">Manual Addition/Removal</text>
+  <text x="90" y="155" font-family="Arial, sans-serif" font-size="11" fill="#666">Must add for debugging</text>
+  <text x="90" y="170" font-family="Arial, sans-serif" font-size="11" fill="#666">Must remove after fixing</text>
+  <text x="90" y="185" font-family="Arial, sans-serif" font-size="11" fill="#666">Creates code clutter</text>
+  
+  <rect x="420" y="120" width="300" height="80" fill="#ffe6e6" stroke="#ff9999" stroke-width="1" rx="5"/>
+  <text x="430" y="140" font-family="Arial, sans-serif" font-size="12" fill="#d32f2f">No Context Information</text>
+  <text x="430" y="155" font-family="Arial, sans-serif" font-size="11" fill="#666">No timestamp</text>
+  <text x="430" y="170" font-family="Arial, sans-serif" font-size="11" fill="#666">No function context</text>
+  <text x="430" y="185" font-family="Arial, sans-serif" font-size="11" fill="#666">No severity level</text>
+  
+  <rect x="780" y="120" width="300" height="80" fill="#ffe6e6" stroke="#ff9999" stroke-width="1" rx="5"/>
+  <text x="790" y="140" font-family="Arial, sans-serif" font-size="12" fill="#d32f2f">Permanent in Code</text>
+  <text x="790" y="155" font-family="Arial, sans-serif" font-size="11" fill="#666">Hard-wired behavior</text>
+  <text x="790" y="170" font-family="Arial, sans-serif" font-size="11" fill="#666">Cannot filter</text>
+  <text x="790" y="185" font-family="Arial, sans-serif" font-size="11" fill="#666">Cannot control externally</text>
+
+  <!-- Arrow pointing down -->
+  <path d="M 600 260 L 600 290 M 590 280 L 600 290 L 610 280" stroke="#34495e" stroke-width="3" fill="none"/>
+  
+  <!-- Section 2: Logging Solution -->
+  <rect x="50" y="300" width="1100" height="200" fill="#e8f5e8" stroke="#4caf50" stroke-width="2" rx="10"/>
+  <text x="70" y="330" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2e7d32">
+    Logging Solution Benefits
+  </text>
+  
+  <!-- Logging benefits -->
+  <rect x="80" y="350" width="180" height="120" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" rx="5"/>
+  <text x="90" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2e7d32">Hierarchical</text>
+  <text x="90" y="390" font-family="Arial, sans-serif" font-size="11" fill="#666">Messages have levels</text>
+  <text x="90" y="405" font-family="Arial, sans-serif" font-size="11" fill="#666">Loggers in hierarchy</text>
+  <text x="90" y="420" font-family="Arial, sans-serif" font-size="11" fill="#666">Inheritance of settings</text>
+  <text x="90" y="435" font-family="Arial, sans-serif" font-size="11" fill="#666">Organized structure</text>
+  <text x="90" y="450" font-family="Arial, sans-serif" font-size="11" fill="#666">Better control</text>
+  
+  <rect x="290" y="350" width="180" height="120" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" rx="5"/>
+  <text x="300" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2e7d32">Metadata</text>
+  <text x="300" y="390" font-family="Arial, sans-serif" font-size="11" fill="#666">Automatic timestamp</text>
+  <text x="300" y="405" font-family="Arial, sans-serif" font-size="11" fill="#666">Function context</text>
+  <text x="300" y="420" font-family="Arial, sans-serif" font-size="11" fill="#666">Logger name</text>
+  <text x="300" y="435" font-family="Arial, sans-serif" font-size="11" fill="#666">Thread information</text>
+  <text x="300" y="450" font-family="Arial, sans-serif" font-size="11" fill="#666">Rich context data</text>
+  
+  <rect x="500" y="350" width="180" height="120" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" rx="5"/>
+  <text x="510" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2e7d32">Flexible Control</text>
+  <text x="510" y="390" font-family="Arial, sans-serif" font-size="11" fill="#666">Runtime configuration</text>
+  <text x="510" y="405" font-family="Arial, sans-serif" font-size="11" fill="#666">External config files</text>
+  <text x="510" y="420" font-family="Arial, sans-serif" font-size="11" fill="#666">No code changes</text>
+  <text x="510" y="435" font-family="Arial, sans-serif" font-size="11" fill="#666">Level-based filtering</text>
+  <text x="510" y="450" font-family="Arial, sans-serif" font-size="11" fill="#666">Handler customization</text>
+  
+  <rect x="710" y="350" width="180" height="120" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" rx="5"/>
+  <text x="720" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2e7d32">Persistent Storage</text>
+  <text x="720" y="390" font-family="Arial, sans-serif" font-size="11" fill="#666">Accumulated records</text>
+  <text x="720" y="405" font-family="Arial, sans-serif" font-size="11" fill="#666">Audit trails</text>
+  <text x="720" y="420" font-family="Arial, sans-serif" font-size="11" fill="#666">Historical analysis</text>
+  <text x="720" y="435" font-family="Arial, sans-serif" font-size="11" fill="#666">Production monitoring</text>
+  <text x="720" y="450" font-family="Arial, sans-serif" font-size="11" fill="#666">Troubleshooting data</text>
+  
+  <rect x="920" y="350" width="180" height="120" fill="#c8e6c9" stroke="#4caf50" stroke-width="1" rx="5"/>
+  <text x="930" y="370" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2e7d32">Separation</text>
+  <text x="930" y="390" font-family="Arial, sans-serif" font-size="11" fill="#666">Logic vs Display</text>
+  <text x="930" y="405" font-family="Arial, sans-serif" font-size="11" fill="#666">Multiple handlers</text>
+  <text x="930" y="420" font-family="Arial, sans-serif" font-size="11" fill="#666">Custom formatters</text>
+  <text x="930" y="435" font-family="Arial, sans-serif" font-size="11" fill="#666">Output destinations</text>
+  <text x="930" y="450" font-family="Arial, sans-serif" font-size="11" fill="#666">Processing flexibility</text>
+
+  <!-- Section 3: Logger Hierarchy -->
+  <rect x="50" y="520" width="550" height="280" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" rx="10"/>
+  <text x="70" y="550" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#7b1fa2">
+    Logger Hierarchy Structure
+  </text>
+  
+  <!-- Root logger -->
+  <rect x="250" y="570" width="120" height="40" fill="#e1bee7" stroke="#9c27b0" stroke-width="2" rx="5"/>
+  <text x="310" y="595" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4a148c">
+    Global Logger
+  </text>
+  
+  <!-- Level 1 loggers -->
+  <rect x="150" y="650" width="100" height="35" fill="#ce93d8" stroke="#9c27b0" stroke-width="1" rx="5"/>
+  <text x="200" y="672" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4a148c">in.ac.iitm</text>
+  
+  <rect x="350" y="650" width="100" height="35" fill="#ce93d8" stroke="#9c27b0" stroke-width="1" rx="5"/>
+  <text x="400" y="672" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#4a148c">com.company</text>
+  
+  <!-- Level 2 loggers -->
+  <rect x="100" y="720" width="120" height="35" fill="#ba68c8" stroke="#9c27b0" stroke-width="1" rx="5"/>
+  <text x="160" y="742" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4a148c">in.ac.iitm.online</text>
+  
+  <rect x="280" y="720" width="120" height="35" fill="#ba68c8" stroke="#9c27b0" stroke-width="1" rx="5"/>
+  <text x="340" y="742" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#4a148c">com.company.app</text>
+  
+  <!-- Connection lines -->
+  <line x1="310" y1="610" x2="200" y2="650" stroke="#7b1fa2" stroke-width="2"/>
+  <line x1="310" y1="610" x2="400" y2="650" stroke="#7b1fa2" stroke-width="2"/>
+  <line x1="200" y1="685" x2="160" y2="720" stroke="#7b1fa2" stroke-width="1"/>
+  <line x1="400" y1="685" x2="340" y2="720" stroke="#7b1fa2" stroke-width="1"/>
+  
+  <!-- Inheritance arrow -->
+  <text x="70" y="775" font-family="Arial, sans-serif" font-size="12" fill="#7b1fa2">
+    Settings inheritance: Parent → Child
+  </text>
+
+  <!-- Section 4: Logging Levels -->
+  <rect x="650" y="520" width="500" height="280" fill="#fff3e0" stroke="#ff9800" stroke-width="2" rx="10"/>
+  <text x="670" y="550" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#e65100">
+    Logging Levels (7 Levels)
+  </text>
+  
+  <!-- Level bars -->
+  <rect x="680" y="570" width="300" height="25" fill="#d32f2f" stroke="#b71c1c" stroke-width="1" rx="3"/>
+  <text x="690" y="587" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">SEVERE</text>
+  <text x="990" y="587" font-family="Arial, sans-serif" font-size="10" fill="#e65100">Critical errors</text>
+  
+  <rect x="680" y="600" width="280" height="25" fill="#f57c00" stroke="#ef6c00" stroke-width="1" rx="3"/>
+  <text x="690" y="617" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">WARNING</text>
+  <text x="990" y="617" font-family="Arial, sans-serif" font-size="10" fill="#e65100">Potential problems</text>
+  
+  <rect x="680" y="630" width="260" height="25" fill="#388e3c" stroke="#2e7d32" stroke-width="1" rx="3"/>
+  <text x="690" y="647" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">INFO</text>
+  <text x="990" y="647" font-family="Arial, sans-serif" font-size="10" fill="#e65100">General information</text>
+  
+  <rect x="680" y="660" width="240" height="20" fill="#1976d2" stroke="#1565c0" stroke-width="1" rx="3"/>
+  <text x="690" y="673" font-family="Arial, sans-serif" font-size="11" fill="white">CONFIG</text>
+  <text x="990" y="673" font-family="Arial, sans-serif" font-size="9" fill="#e65100">Configuration</text>
+  
+  <rect x="680" y="685" width="220" height="20" fill="#7b1fa2" stroke="#6a1b9a" stroke-width="1" rx="3"/>
+  <text x="690" y="698" font-family="Arial, sans-serif" font-size="11" fill="white">FINE</text>
+  <text x="990" y="698" font-family="Arial, sans-serif" font-size="9" fill="#e65100">Debug info</text>
+  
+  <rect x="680" y="710" width="200" height="20" fill="#455a64" stroke="#37474f" stroke-width="1" rx="3"/>
+  <text x="690" y="723" font-family="Arial, sans-serif" font-size="11" fill="white">FINER</text>
+  <text x="990" y="723" font-family="Arial, sans-serif" font-size="9" fill="#e65100">Detailed debug</text>
+  
+  <rect x="680" y="735" width="180" height="20" fill="#424242" stroke="#212121" stroke-width="1" rx="3"/>
+  <text x="690" y="748" font-family="Arial, sans-serif" font-size="11" fill="white">FINEST</text>
+  <text x="990" y="748" font-family="Arial, sans-serif" font-size="9" fill="#e65100">Most detailed</text>
+  
+  <!-- Default level indicator -->
+  <text x="680" y="775" font-family="Arial, sans-serif" font-size="12" fill="#e65100">
+    Default: INFO level and above
+  </text>
+
+  <!-- Section 5: Code Examples -->
+  <rect x="50" y="820" width="1100" height="220" fill="#e3f2fd" stroke="#2196f3" stroke-width="2" rx="10"/>
+  <text x="70" y="850" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1565c0">
+    Implementation Examples
+  </text>
+  
+  <!-- Global logger example -->
+  <rect x="80" y="870" width="350" height="120" fill="#bbdefb" stroke="#2196f3" stroke-width="1" rx="5"/>
+  <text x="90" y="890" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0d47a1">Global Logger</text>
+  <text x="90" y="910" font-family="Courier, monospace" font-size="10" fill="#1565c0">Logger logger = Logger.getGlobal();</text>
+  <text x="90" y="925" font-family="Courier, monospace" font-size="10" fill="#1565c0">logger.info("Application started");</text>
+  <text x="90" y="945" font-family="Arial, sans-serif" font-size="10" fill="#666">Simple global access</text>
+  <text x="90" y="960" font-family="Arial, sans-serif" font-size="10" fill="#666">Automatic metadata</text>
+  <text x="90" y="975" font-family="Arial, sans-serif" font-size="10" fill="#666">Built-in formatting</text>
+  
+  <!-- Custom logger example -->
+  <rect x="460" y="870" width="350" height="120" fill="#bbdefb" stroke="#2196f3" stroke-width="1" rx="5"/>
+  <text x="470" y="890" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0d47a1">Custom Logger</text>
+  <text x="470" y="910" font-family="Courier, monospace" font-size="10" fill="#1565c0">Logger myLogger = Logger.getLogger</text>
+  <text x="470" y="925" font-family="Courier, monospace" font-size="10" fill="#1565c0">  ("com.myapp.module");</text>
+  <text x="470" y="945" font-family="Arial, sans-serif" font-size="10" fill="#666">Named logger instance</text>
+  <text x="470" y="960" font-family="Arial, sans-serif" font-size="10" fill="#666">Hierarchical organization</text>
+  <text x="470" y="975" font-family="Arial, sans-serif" font-size="10" fill="#666">Specific configuration</text>
+  
+  <!-- Level control example -->
+  <rect x="840" y="870" width="260" height="120" fill="#bbdefb" stroke="#2196f3" stroke-width="1" rx="5"/>
+  <text x="850" y="890" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0d47a1">Level Control</text>
+  <text x="850" y="910" font-family="Courier, monospace" font-size="9" fill="#1565c0">logger.setLevel(Level.OFF);</text>
+  <text x="850" y="925" font-family="Courier, monospace" font-size="9" fill="#1565c0">logger.setLevel(Level.ALL);</text>
+  <text x="850" y="940" font-family="Courier, monospace" font-size="9" fill="#1565c0">logger.warning("Issue found");</text>
+  <text x="850" y="960" font-family="Arial, sans-serif" font-size="10" fill="#666">Runtime control</text>
+  <text x="850" y="975" font-family="Arial, sans-serif" font-size="10" fill="#666">No code changes</text>
+
+  <!-- Section 6: Configuration Methods -->
+  <rect x="50" y="1060" width="1100" height="180" fill="#f1f8e9" stroke="#689f38" stroke-width="2" rx="10"/>
+  <text x="70" y="1090" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#33691e">
+    Configuration Methods
+  </text>
+  
+  <!-- Programmatic config -->
+  <rect x="80" y="1110" width="350" height="100" fill="#c5e1a5" stroke="#689f38" stroke-width="1" rx="5"/>
+  <text x="90" y="1130" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#33691e">Programmatic</text>
+  <text x="90" y="1150" font-family="Arial, sans-serif" font-size="11" fill="#666">Set levels in code</text>
+  <text x="90" y="1165" font-family="Arial, sans-serif" font-size="11" fill="#666">Configure handlers</text>
+  <text x="90" y="1180" font-family="Arial, sans-serif" font-size="11" fill="#666">Requires recompilation</text>
+  <text x="90" y="1195" font-family="Arial, sans-serif" font-size="11" fill="#666">Good for simple cases</text>
+  
+  <!-- Config file -->
+  <rect x="460" y="1110" width="350" height="100" fill="#c5e1a5" stroke="#689f38" stroke-width="1" rx="5"/>
+  <text x="470" y="1130" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#33691e">Configuration File</text>
+  <text x="470" y="1150" font-family="Arial, sans-serif" font-size="11" fill="#666">External properties file</text>
+  <text x="470" y="1165" font-family="Arial, sans-serif" font-size="11" fill="#666">No code changes needed</text>
+  <text x="470" y="1180" font-family="Arial, sans-serif" font-size="11" fill="#666">Runtime modification</text>
+  <text x="470" y="1195" font-family="Arial, sans-serif" font-size="11" fill="#666">Production flexibility</text>
+  
+  <!-- Runtime control -->
+  <rect x="840" y="1110" width="260" height="100" fill="#c5e1a5" stroke="#689f38" stroke-width="1" rx="5"/>
+  <text x="850" y="1130" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#33691e">Runtime Control</text>
+  <text x="850" y="1150" font-family="Arial, sans-serif" font-size="11" fill="#666">JVM arguments</text>
+  <text x="850" y="1165" font-family="Arial, sans-serif" font-size="11" fill="#666">System properties</text>
+  <text x="850" y="1180" font-family="Arial, sans-serif" font-size="11" fill="#666">Environment variables</text>
+  <text x="850" y="1195" font-family="Arial, sans-serif" font-size="11" fill="#666">Dynamic adjustment</text>
+
+  <!-- Section 7: Real-world Applications -->
+  <rect x="50" y="1260" width="1100" height="160" fill="#fce4ec" stroke="#e91e63" stroke-width="2" rx="10"/>
+  <text x="70" y="1290" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ad1457">
+    Real-world Applications
+  </text>
+  
+  <!-- Production systems -->
+  <rect x="80" y="1310" width="200" height="80" fill="#f8bbd9" stroke="#e91e63" stroke-width="1" rx="5"/>
+  <text x="90" y="1330" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ad1457">Production Systems</text>
+  <text x="90" y="1350" font-family="Arial, sans-serif" font-size="10" fill="#666">Banking systems</text>
+  <text x="90" y="1365" font-family="Arial, sans-serif" font-size="10" fill="#666">Railway reservations</text>
+  <text x="90" y="1380" font-family="Arial, sans-serif" font-size="10" fill="#666">Mission-critical apps</text>
+  
+  <!-- Audit trails -->
+  <rect x="300" y="1310" width="200" height="80" fill="#f8bbd9" stroke="#e91e63" stroke-width="1" rx="5"/>
+  <text x="310" y="1330" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ad1457">Audit Trails</text>
+  <text x="310" y="1350" font-family="Arial, sans-serif" font-size="10" fill="#666">Transaction records</text>
+  <text x="310" y="1365" font-family="Arial, sans-serif" font-size="10" fill="#666">User actions</text>
+  <text x="310" y="1380" font-family="Arial, sans-serif" font-size="10" fill="#666">Compliance tracking</text>
+  
+  <!-- Troubleshooting -->
+  <rect x="520" y="1310" width="200" height="80" fill="#f8bbd9" stroke="#e91e63" stroke-width="1" rx="5"/>
+  <text x="530" y="1330" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ad1457">Troubleshooting</text>
+  <text x="530" y="1350" font-family="Arial, sans-serif" font-size="10" fill="#666">Error investigation</text>
+  <text x="530" y="1365" font-family="Arial, sans-serif" font-size="10" fill="#666">Performance analysis</text>
+  <text x="530" y="1380" font-family="Arial, sans-serif" font-size="10" fill="#666">Bug reproduction</text>
+  
+  <!-- Monitoring -->
+  <rect x="740" y="1310" width="200" height="80" fill="#f8bbd9" stroke="#e91e63" stroke-width="1" rx="5"/>
+  <text x="750" y="1330" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ad1457">Monitoring</text>
+  <text x="750" y="1350" font-family="Arial, sans-serif" font-size="10" fill="#666">System health</text>
+  <text x="750" y="1365" font-family="Arial, sans-serif" font-size="10" fill="#666">Performance metrics</text>
+  <text x="750" y="1380" font-family="Arial, sans-serif" font-size="10" fill="#666">Alerting systems</text>
+  
+  <!-- Documentation -->
+  <rect x="960" y="1310" width="140" height="80" fill="#f8bbd9" stroke="#e91e63" stroke-width="1" rx="5"/>
+  <text x="970" y="1330" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ad1457">Documentation</text>
+  <text x="970" y="1350" font-family="Arial, sans-serif" font-size="10" fill="#666">Process records</text>
+  <text x="970" y="1365" font-family="Arial, sans-serif" font-size="10" fill="#666">Decision trails</text>
+  <text x="970" y="1380" font-family="Arial, sans-serif" font-size="10" fill="#666">Historical data</text>
+
+  <!-- Key Benefits Summary -->
+  <rect x="50" y="1440" width="1100" height="120" fill="#e8eaf6" stroke="#3f51b5" stroke-width="2" rx="10"/>
+  <text x="70" y="1470" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#283593">
+    Key Benefits Summary
+  </text>
+  
+  <text x="80" y="1500" font-family="Arial, sans-serif" font-size="14" fill="#1a237e">
+    • Hierarchical organization with inheritance • Flexible runtime configuration • Rich metadata automatically added
+  </text>
+  <text x="80" y="1520" font-family="Arial, sans-serif" font-size="14" fill="#1a237e">
+    • Level-based filtering (7 levels) • External configuration support • Separation of logic and display
+  </text>
+  <text x="80" y="1540" font-family="Arial, sans-serif" font-size="14" fill="#1a237e">
+    • Production-ready for critical systems • Audit and compliance support • Better than simple print statements
+  </text>
+</svg>
