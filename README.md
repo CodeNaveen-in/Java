@@ -12,6 +12,7 @@ This repo contains:
 - 🧪 **Practice Programs** — hands-on exercises for each topic
 - 🚀 **Mini Projects** — built to reinforce learning through implementation
 - 🔗 **Resources** — curated links to books, videos, and references
+- **OPPE Codes** - questions for practice for exam.
 
 ## 📚 Study Material
 
