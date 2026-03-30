@@ -1,0 +1,5 @@
+# IntelliJ Env
+.idea
+
+# Java compiled class 
+*.class
